@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void main()
+{
+const int x=3,y=5;
+
+int mat2[x][y]={{1,2,3,4,5},
+{6,7,8,9,10},
+{11,12,13,14,15}};
+
+cout<<"Matriks 2 dimensi: "<<endl<<endl;
+for(int i=0; i<3; i++)
+{
+for(int j=0; j<5; j++)
+{
+cout<<setw(3)<<mat2[i][j];
+}
+cout<<endl;
+}
+cout<<endl;
+
+//Ubah menjadi 1 dimensi
+
+int mat[x*y];
+int indeks = 0;
+
+for(int i=0; i<5; i++)
+{
+for(int j=0; j<3; j++)
+{
+mat[indeks] = mat2[j][i];
+indeks++;
+}
+}
+
+cout<<"Matriks 1 dimensi: "<<endl<<endl;
+for(int i=0; i<x*y; i++)
+{
+cout<<setw(3)<<mat[i];
+}
+cout<<endl<<endl;
+}
